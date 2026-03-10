@@ -5,12 +5,14 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[List[int]]
         """
+        nums1 = set(nums1)
+        nums2 = set(nums2)
         answer1 = []
         answer2 = []
         for i in nums1:
-            if i not in nums2 and i not in answer1:
+            if i not in nums2:
                 answer1.append(i)
         for i in nums2:
-            if i not in nums1 and i not in answer2:
+            if i not in nums1:
                 answer2.append(i)
         return answer1, answer2
