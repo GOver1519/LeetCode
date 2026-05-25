@@ -4,17 +4,25 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        result = ""
-        min_len = len(strs[0])
-        for word in strs:
-            if len(word)<min_len:
-                min_len = len(word)
-        for j in range(min_len):
-            ch = strs[0][j]
+        
+        # Edge case: empty list
+        if not strs:
+            return ""
+        
+        first = strs[0]
+        prefix = ""
 
-            for i in range(1, len(strs)):
-                if strs[i][j] != ch:
-                    return result
-                    exit()
-            result += ch
-        return result
+        # Generate prefixes one by one
+        for i in range(len(first)):
+            
+            current_prefix = first[:i + 1]
+
+            # Check if all strings start with current_prefix
+            for word in strs:
+                if not word.startswith(current_prefix):
+                    return prefix
+
+            # Update valid prefix
+            prefix = current_prefix
+
+        return prefix
