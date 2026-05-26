@@ -4,13 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        k = len(nums)
-        i = 0
-        j = 1
-        while j<k:
-            if nums[i] != nums[j]:
-                i += 1
-                nums[i] = nums[j]
-            j += 1
-        return i+1
-            
+        replace = 1
+        for i in range(1, len(nums)):
+            if nums[i-1] != nums[i]:
+                nums[replace] = nums[i]
+                replace += 1
+        return replace
