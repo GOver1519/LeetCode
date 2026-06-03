@@ -9,9 +9,9 @@ class Solution(object):
         for i in range(len(a)):
             if target in a:
                 return a.index(target)
-        nums.append(target)
-        nums.sort()
+        a.append(target)
+        a.sort()
 
-        return nums.index(target)
+        return a.index(target)
                 
                 
