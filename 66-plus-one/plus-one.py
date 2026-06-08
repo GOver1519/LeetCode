@@ -4,9 +4,12 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
-        unpack = 0
-        for i in digits:
-            unpack = unpack*10+i
-        add = unpack+1
-        increment = list(map(int, str(add)))
-        return increment        
+        string = ''.join(map(str, digits))
+        result = int(string) + 1
+        nums = []
+        while result > 0:
+            digit = result % 10
+            nums.append(digit)
+            result = result // 10
+        nums.reverse()
+        return nums
