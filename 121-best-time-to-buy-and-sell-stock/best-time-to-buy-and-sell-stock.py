@@ -10,11 +10,11 @@ class Solution(object):
         minPrice = prices[0]
         maxProfit = 0
 
-        for price in prices:
-            if price < minPrice:
-                minPrice = price
+        for i in prices:
+            if i < minPrice:
+                minPrice = i
 
-            profit = price - minPrice
+            profit = i - minPrice
 
             if profit > maxProfit:
                 maxProfit = profit
