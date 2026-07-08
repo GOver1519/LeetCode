@@ -7,11 +7,11 @@ class Solution(object):
         candidate = None
         count = 0
 
-        for num in nums:
+        for i in nums:
             if count == 0:
-                candidate = num
+                candidate = i
 
-            if num == candidate:
+            if i == candidate:
                 count += 1
             else:
                 count -= 1
